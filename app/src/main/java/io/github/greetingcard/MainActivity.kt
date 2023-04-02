@@ -12,6 +12,8 @@ import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.text.font.FontStyle
+import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import io.github.greetingcard.ui.theme.GreetingCardTheme
@@ -35,8 +37,14 @@ class MainActivity : ComponentActivity() {
 
 @Composable 
 fun Residence(address: String) {
-    Surface(color = Color.Magenta) {
-        Text(text = "Address: $address", Modifier.padding(32.dp), color = Color.Yellow)
+    Surface(color = Color.White) {
+        Text(
+            text = "Address: $address",
+            Modifier.padding(32.dp),
+            color = Color.Black,
+            fontWeight = FontWeight.Bold,
+            fontStyle = FontStyle.Italic,
+        )
     }
 }
 
@@ -44,6 +52,6 @@ fun Residence(address: String) {
 @Composable
 fun DefaultPreview() {
     GreetingCardTheme {
-        Residence(address = "154 1/2 E 82nd St")
+        Residence(address = "Fresh Prince of Bel Air, 251 N Bristol Ave, Los Angeles, CA 90049")
     }
 }
